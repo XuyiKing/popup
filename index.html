@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Popup</title>
+    <link rel="stylesheet" href="./css/popup.css">
+
+    <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/popup.js"></script>
+</head>
+<body>
+
+    <div>
+        <ul>
+            <li>
+                <span class="confirm">确认弹窗</span>
+            </li>
+            <li>
+                <span class="content">内容弹窗</span>
+            </li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    $(function () {
+        $(".confirm").off("click").on("click", function () {
+            Popup.confirm({
+                title: "确认操作"
+            });
+        });
+
+        $(".content").off("click").on("click", function () {
+            Popup.contentPopup({
+                title: "内容弹窗"
+            });
+        })
+    })
+</script>
+</html>
