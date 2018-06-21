@@ -20,7 +20,8 @@ var Popup = (function () {
             templateId: null,
             callback: null,
             bind: null,
-            okFunc: null
+            okFunc: null,
+            model: ""
         }, options);
         var formLabel = "popupForm";
 
@@ -96,7 +97,7 @@ var Popup = (function () {
     //     return Modelstring
     // })();
 
-    var optiondefault = {
+    var optiondefaults = {
         el: '',   // 获取的弹窗内容html容器  例如： #editButon
         title: '模态框',
         centerTitle: '',
@@ -138,11 +139,13 @@ var Popup = (function () {
                 $.addback()
             }
             $('#modelback').css('display', 'block');
-            for (var key in option) {
-                if (option[key]) {
-                    optiondefault[key] = option[key];
-                }
-            }
+            // for (var key in option) {
+            //     if (option[key]) {
+            //         optiondefault[key] = option[key];
+            //     }
+            // }
+
+            optiondefault = $.extend(true, optiondefaults, option);
 
             /*htmlModel[option.el]*/
             $('body').append(
