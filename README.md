@@ -5,6 +5,8 @@
 Operable pop-up plug-in
 基于Jquery的插件
 
+-  [Demo](http://xuyiKing.github.io/popup)
+
 
 ## 内容弹窗
 
