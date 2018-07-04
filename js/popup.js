@@ -72,7 +72,7 @@ var Popup = (function () {
             '</div>';
 
         $.openMode(settings);
-    }
+    };
 
     return {
         contentPopup: contentPopup,
@@ -120,6 +120,7 @@ var Popup = (function () {
         };
     // 填充内容区域
     var realHtml = '';
+    var optiondefault = {};
 
     var modeObj = {
         addback: function () {
@@ -139,13 +140,9 @@ var Popup = (function () {
                 $.addback()
             }
             $('#modelback').css('display', 'block');
-            // for (var key in option) {
-            //     if (option[key]) {
-            //         optiondefault[key] = option[key];
-            //     }
-            // }
 
-            optiondefault = $.extend(true, optiondefaults, option);
+            // 获取参数，并且避免对常量内容污染
+            optiondefault = $.extend(true, {}, optiondefaults, option);
 
             /*htmlModel[option.el]*/
             $('body').append(

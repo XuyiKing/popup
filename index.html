@@ -7,9 +7,19 @@
 
     <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="./js/popup.js"></script>
+    <style>
+        ul li {
+            list-style-type: none;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
+    <div>
+        实例：
+    </div>
     <div>
         <ul>
             <li>
@@ -19,6 +29,38 @@
                 <span class="content">内容弹窗</span>
             </li>
         </ul>
+    </div>
+    <div>
+        <span>代码实例：</span>
+        <br>
+        ------------------------------------------------------------
+        <pre>
+        $(".confirm").off("click").on("click", function () {
+            Popup.confirm({
+                title: "确认操作",
+                content: "确定操作？"
+            });
+        });
+
+        $(".content").off("click").on("click", function () {
+            Popup.contentPopup({
+                el: "#example",
+                title: "内容弹窗"
+            });
+        })
+        </pre>
+        ------------------------------------------------------------
+    </div>
+
+    <div id="example" style="display:none;">
+        <div>
+            <h1>弹窗内容</h1>
+            <div>
+                <span>
+                    <p>弹窗内容是自定义在html中的html块</p>
+                </span>
+            </div>
+        </div>
     </div>
     
 </body>
@@ -33,6 +75,7 @@
 
         $(".content").off("click").on("click", function () {
             Popup.contentPopup({
+                el: "#example",
                 title: "内容弹窗"
             });
         })

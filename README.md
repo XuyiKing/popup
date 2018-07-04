@@ -1,6 +1,5 @@
 # popup
 
-[toc]
 
 Operable pop-up plug-in
 基于Jquery的插件
